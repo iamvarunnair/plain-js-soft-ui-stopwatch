@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Varun: Cool ain't it?</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Exo&family=Work+Sans:wght@500&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Style order in element
+                <element specific class>
+                width100
+                min-height100
+                height100
+                display-flex
+                display-flex-center
+                display-flex-column
+                display-flex-hr
+                margin-a
+                font-size-2
+                font-worksans
+                font-weight-medium
+                text-color-a
+                background-color-a
+                border-radius-b
+                soft-ui-outer-shadow
+                button-a
+                no-select
+            */
+        
+         :root {
+            --color-primary-a: #0083bb;
+            --color-primary-b: #8daffe;
+            /* --color-primary-c: #ebf1ff; */
+            --color-primary-c: #dcedfd;
+            --color-secondary-a: #ff5aad;
+            --color-secondary-b: #ff5aad22;
+            --color-secondary-c: #ff5aad44;
+            --color-black-a: #464040;
+            --color-white-a: #f5f5f5;
+            --color-white-b: #fff;
+            --color-white-c: #fff4;
+            --color-white-d: #fff7;
+            --text-color-a: var(--color-primary-a);
+            --text-color-b: var(--color-secondary-a);
+            --text-color-c: var(--color-black-a);
+            --background-color-a: var(--color-primary-c);
+            --background-color-b: var(--color-primary-a);
+            --background-color-c: var(--color-white-b);
+            --background-color-d: var(--color-black-a);
+            --background-color-e: var(--color-secondary-a);
+            --background-color-f: var(--color-secondary-b);
+            --background-color-g: var(--color-white-c);
+            --background-color-h: var(--color-secondary-c);
+            --background-color-i: var(--color-white-d);
+            --unit: calc(1rem + 0.5vw);
+        }
+        
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        
+        button {
+            background: none;
+            outline: none;
+            cursor: pointer;
+        }
+        
+        body {
+            background-color: burlywood;
+            width: 100vw;
+            height: 100vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            flex-flow: column;
+        }
+        
+        button {
+            border: transparent;
+            outline: none;
+            box-shadow: none;
+        }
+        
+        .font-worksans {
+            font-family: 'Work Sans', sans-serif;
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        .font-exo {
+            font-family: 'Exo', sans-serif;
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        .width100 {
+            width: 100%;
+        }
+        
+        .width80 {
+            width: 80%;
+        }
+        
+        .min-height100 {
+            min-height: 100vh;
+        }
+        
+        .height100 {
+            height: 100%;
+        }
+        
+        .display-flex {
+            display: flex;
+        }
+        
+        .display-flex-center {
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .display-flex-column {
+            flex-flow: column;
+        }
+        
+        .display-flex-hr {
+            justify-content: space-evenly;
+        }
+        
+        .display-flex-hr-ends {
+            justify-content: space-between;
+        }
+        
+        .display-flex-hr-around {
+            justify-content: space-around;
+        }
+        
+        .position-relative {
+            position: relative;
+        }
+        
+        .position-absolute {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .position-center {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .margin-a {
+            margin-bottom: calc(var(--unit));
+        }
+        
+        .font-size-1 {
+            font-size: calc(var(--unit)*2.8);
+        }
+        
+        .font-size-2 {
+            font-size: calc(var(--unit)*2);
+        }
+        
+        .font-size-3 {
+            font-size: calc(var(--unit)*1.2);
+        }
+        
+        .font-size-4 {
+            font-size: calc(var(--unit)*0.8);
+        }
+        
+        .font-size-5 {
+            font-size: calc(var(--unit)*0.6);
+        }
+        
+        .font-weight-light {
+            font-weight: 300;
+        }
+        
+        .font-weight-medium {
+            font-weight: 300;
+        }
+        
+        .font-weight-heavy {
+            font-weight: 300;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .text-color-a {
+            color: var(--text-color-a);
+        }
+        
+        .text-color-b {
+            color: var(--text-color-b);
+        }
+        
+        .text-color-c {
+            color: var(--text-color-c);
+        }
+        
+        .background-color-a {
+            background-color: var(--background-color-a);
+        }
+        
+        .background-color-b {
+            background-color: var(--background-color-b);
+        }
+        
+        .background-color-e {
+            background-color: var(--background-color-e);
+        }
+        
+        .border-radius-a {
+            border-radius: calc(var(--unit) * 2);
+        }
+        
+        .border-radius-b {
+            border-radius: calc(var(--unit) * 10);
+        }
+        
+        .soft-ui-inner-shadow {
+            box-shadow: inset 10px 10px 20px rgba(141, 175, 254, 0.3), inset -10px -10px 20px rgba(256, 256, 256, 0.3);
+        }
+        
+        .soft-ui-outer-shadow {
+            box-shadow: 15px 15px 25px rgba(141, 175, 254, 0.3), -15px -15px 25px rgba(255, 255, 255, 0.3);
+        }
+        
+        .button-a {
+            padding: calc(var(--unit)) calc(var(--unit) * 1.5);
+        }
+        
+        .display-timer {
+            width: calc(15rem + 7.5vw);
+            height: calc(5rem + 2.5vw);
+        }
+        
+        .middle {
+            width: calc(var(--unit) * 16);
+            height: calc(var(--unit) * 16);
+        }
+        
+        .subtitle {
+            width: calc(var(--unit)*13);
+        }
+        
+        .subtitle>p {
+            text-align: center;
+            width: calc(1.5rem + 1vw);
+        }
+        
+        .clock-marker-wrapper {
+            width: calc(var(--unit) * 14);
+            height: calc(var(--unit) * 14);
+        }
+        
+        .clock-marker-wrapper>.clock-marker:nth-child(3)>.clock-marker-child:first-child {
+            background-color: var(--background-color-d);
+            width: 8%;
+            height: calc(var(--unit) * 0.2);
+        }
+        
+        .clock-marker-child {
+            width: 5%;
+            height: calc(var(--unit) * 0.1);
+        }
+        
+        .clock-marker-hand-child {
+            width: calc(var(--unit) * 0.2);
+            height: 50%;
+        }
+        
+        .clock-marker-center-dot {
+            width: calc(var(--unit)*4);
+            height: calc(var(--unit)*4);
+        }
+        
+        .bottom-screen-xl {
+            width: 0;
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .toggle {
+            width: calc(var(--unit)*11);
+        }
+        
+        .alternate-toggle {
+            width: calc(var(--unit)*15);
+        }
+        /* .toggle:hover,
+        .alternate-toggle:hover {
+            background-color: var(--background-color-f);
+        } */
+        
+        .toggle:active,
+        .alternate-toggle:active {
+            background-color: var(--background-color-h);
+        }
+        
+        .reset {
+            width: calc(var(--unit)*11);
+        }
+        /* .reset:hover {
+            background-color: var(--background-color-g);
+        } */
+        
+        .reset:active {
+            background-color: var(--background-color-i);
+        }
+        /* To remove blue selecteion retangle on buttons on touchable devices like chrome on android */
+        
+        .no-select {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+        }
+        /* To remove sticky hover state in device with touch input like crome on android */
+        
+        @media (hover: hover) and (pointer: fine) {
+            .reset:hover {
+                background-color: var(--background-color-g);
+            }
+            .toggle:hover,
+            .alternate-toggle:hover {
+                background-color: var(--background-color-f);
+            }
+        }
+        /* To change layout from mobile: top-bottom to web: left-right */
+        
+        @media screen and (min-width: 600px) {
+            body {
+                flex-flow: row-reverse;
+            }
+            .bottom {
+                width: 0;
+                height: 0;
+                overflow: hidden;
+                position: fixed;
+            }
+            .bottom-screen-xl {
+                width: initial;
+                height: initial;
+                overflow: initial;
+            }
+            .reset {
+                width: calc(var(--unit)*15);
+            }
+        }
+    </style>
+</head>
+
+<body onload="init()" class="
+            background-color-a
+            display-flex display-flex-center display-flex-hr
+        ">
+    <!-- To debug counter value -->
+    <!-- <h1 class="timer-counter text-center">00</h1>
+        <br /><br /> -->
+    <div class="
+                top
+                display-flex display-flex-center display-flex-column
+            ">
+        <p class="heading margin-a font-size-3 font-worksans text-color-c">
+            STOPWATCH
+        </p>
+        <div class="
+                    display-timer
+                    width100
+                    display-flex display-flex-center
+                    margin-a
+                    background-color-a
+                    border-radius-a
+                    soft-ui-inner-shadow
+                ">
+            <h1 class="timer-hours font-size-1 font-exo text-color-a">
+                00
+            </h1>
+            <span class="text-color-c">&nbsp:&nbsp</span>
+            <h1 class="timer-minutes font-size-1 font-exo text-color-a">
+                00
+            </h1>
+            <span class="text-color-c">&nbsp:&nbsp</span>
+            <h1 class="timer-seconds font-size-1 font-exo text-color-a">
+                00
+            </h1>
+        </div>
+        <div class="subtitle display-flex display-flex-hr margin-a">
+            <p class="font-size-4 font-exo text-color-c">HR</p>
+            <p class="font-size-4 font-exo text-color-c">MIN</p>
+            <p class="font-size-4 font-exo text-color-c">S</p>
+        </div>
+        <div class="bottom-screen-xl display-flex display-flex-center display-flex-column">
+            <button class="
+                    alternate-toggle
+                    text-button
+                    margin-a
+                    font-size-3 font-worksans
+                    text-color-a
+                    background-color-a
+                    border-radius-b
+                    soft-ui-outer-shadow
+                    button-a no-select
+                " onclick="toggle()">
+                [> START
+            </button>
+            <button class="
+                    reset
+                    font-size-3 font-worksans
+                    text-color-b
+                    border-radius-b
+                    button-a no-select
+                " onclick="reset()">
+                RESET
+            </button>
+        </div>
+    </div>
+    <div class="
+                middle
+                display-flex display-flex-center
+                border-radius-b
+                soft-ui-inner-shadow
+            ">
+        <div class="clock-marker-wrapper width80 position-relative">
+            <div class="
+                        clock-marker
+                        width100
+                        display-flex display-flex-hr-ends
+                        position-absolute position-center
+                    " style="transform: translate(-50%, -50%) rotateZ(30deg)">
+                <div class="
+                            clock-marker-child
+                            background-color-b
+                            border-radius-b
+                        "></div>
+                <div class="
+                            clock-marker-child
+                            background-color-b
+                            border-radius-b
+                        "></div>
+            </div>
+            <div class="
+                        clock-marker
+                        width100
+                        display-flex display-flex-hr-ends
+                        position-absolute position-center
+                    " style="transform: translate(-50%, -50%) rotateZ(60deg)">
+                <div class="
+                            clock-marker-child
+                            background-color-b
+                            border-radius-b
+                        "></div>
+                <div class="
+                            clock-marker-child
+                            background-color-b
+                            border-radius-b
+                        "></div>
+            </div>
+            <div class="
+                        clock-marker
+                        width100
+                        display-flex display-flex-hr-ends
+                        position-absolute position-center
+                    " style="transform: translate(-50%, -50%) rotateZ(90deg)">
+                <div class="
+                            clock-marker-child
+                            background-color-b
+                            border-radius-b
+                        "></div>
+                <div class="
+                            clock-marker-child
+                            background-color-b
+                            border-radius-b
+                        "></div>
+            </div>
+            <div class="
+                        clock-marker
+                        width100
+                        display-flex display-flex-hr-ends
+                        position-absolute position-center
+                    " style="transform: translate(-50%, -50%) rotateZ(120deg)">
+                <div class="
+                            clock-marker-child
+                            background-color-b
+                            border-radius-b
+                        "></div>
+                <div class="
+                            clock-marker-child
+                            background-color-b
+                            border-radius-b
+                        "></div>
+            </div>
+            <div class="
+                        clock-marker
+                        width100
+                        display-flex display-flex-hr-ends
+                        position-absolute position-center
+                    " style="transform: translate(-50%, -50%) rotateZ(150deg)">
+                <div class="
+                            clock-marker-child
+                            background-color-b
+                            border-radius-b
+                        "></div>
+                <div class="
+                            clock-marker-child
+                            background-color-b
+                            border-radius-b
+                        "></div>
+            </div>
+            <div class="
+                        clock-marker
+                        width100
+                        display-flex display-flex-hr-ends
+                        position-absolute position-center
+                    " style="transform: translate(-50%, -50%) rotateZ(180deg)">
+                <div class="
+                            clock-marker-child
+                            background-color-b
+                            border-radius-b
+                        "></div>
+                <div class="
+                            clock-marker-child
+                            background-color-b
+                            border-radius-b
+                        "></div>
+            </div>
+            <div class="
+                        clock-marker-hand
+                        height100
+                        display-flex
+                        position-absolute position-center
+                    ">
+                <div class="
+                            clock-marker-hand-child
+                            background-color-e
+                            border-radius-b
+                        "></div>
+            </div>
+            <div class="
+                        clock-marker-center-dot
+                        position-absolute position-center
+                        background-color-a
+                        border-radius-b
+                        soft-ui-outer-shadow
+                    "></div>
+        </div>
+    </div>
+    </div>
+    <div class="bottom display-flex display-flex-center display-flex-column">
+        <button class="
+                    toggle
+                    text-button
+                    margin-a
+                    font-size-3 font-worksans
+                    text-color-a
+                    background-color-a
+                    border-radius-b
+                    soft-ui-outer-shadow
+                    button-a no-select
+                " onclick="toggle()">
+                [> START
+            </button>
+        <button class="
+                    reset
+                    font-size-3 font-worksans
+                    text-color-b
+                    border-radius-b
+                    button-a no-select
+                " onclick="reset()">
+                RESET
+            </button>
+    </div>
+</body>
+<script>
+    let timerHoursDOM,
+        timerMinutesDOM,
+        timerSecondsDOM,
+        timerSecondsHandDOM,
+        toggleButtonDOM,
+        toggleLargeScreenButtonDOM,
+        interval,
+        /* // To debug counter value
+        // timerCounterDOM,
+        // counter = 57,
+        // counter = 117,
+        // counter = 3657,
+        */
+        hours = 0,
+        minutes = 0,
+        seconds = 0,
+        counter = 0,
+        reducedCounter = 0,
+        isTimerOn = false;
+
+    function init() {}
+    document.addEventListener('DOMContentLoaded', fetchDoms);
+    /* Fetches all doms when DOMContentLoaded event is run */
+    function fetchDoms() {
+        // timerCounterDOM = document.querySelector('.timerCcounter');
+        timerHoursDOM = document.querySelector('.timer-hours');
+        timerMinutesDOM = document.querySelector('.timer-minutes');
+        timerSecondsDOM = document.querySelector('.timer-seconds');
+        timerSecondsHandDOM = document.querySelector('.clock-marker-hand');
+        toggleButtonDOM = document.querySelector('.toggle');
+        toggleLargeScreenButtonDOM = document.querySelector('.alternate-toggle');
+    }
+    /* Toggle button state from start to pause and visa vera */
+    function toggle() {
+        if (toggleButtonDOM) {
+            if (isTimerOn) {
+                pause();
+                toggleButtonDOM.innerText = '[> Start';
+                toggleLargeScreenButtonDOM.innerText = '[> Start';
+            } else {
+                start();
+                toggleButtonDOM.innerText = '|| Pause';
+                toggleLargeScreenButtonDOM.innerText = '|| Pause';
+            }
+            isTimerOn = !isTimerOn;
+        } else {
+            alert(`Couldn't load the DOM.`);
+        }
+    }
+    /* Sets an interval, starts a counter and modifies respective doms for hours, minutes seconds value and second hand rotation */
+    function start() {
+        interval = setInterval(() => {
+            /* To debug counter value */
+            // timerCounterDOM.innerText =
+            //     counter < 10 && counter >= 0 ? '0' + counter : counter;
+            reducedCounter = counter = counter + 1;
+            if (timerHoursDOM && timerMinutesDOM && timerSecondsDOM) {
+                if (Math.floor(counter / 3600) > 0) {
+                    hours = Math.floor(counter / 3600);
+                    reducedCounter = reducedCounter % 3600;
+                    timerHoursDOM.innerText =
+                        hours < 10 && hours >= 0 ? '0' + hours : hours;
+                } else {
+                    timerHoursDOM.innerText = '00';
+                }
+                if (Math.floor(reducedCounter / 60) > 0) {
+                    minutes = Math.floor(reducedCounter / 60);
+                    reducedCounter = reducedCounter % 60;
+                    timerMinutesDOM.innerText =
+                        minutes < 10 && minutes >= 0 ?
+                        '0' + minutes :
+                        minutes;
+                } else {
+                    timerMinutesDOM.innerText = '00';
+                }
+                timerSecondsDOM.innerText =
+                    reducedCounter < 10 && reducedCounter >= 0 ?
+                    '0' + reducedCounter :
+                    reducedCounter;
+                timerSecondsHandDOM.style.transform = 'translate(-50%, -50%) rotateZ(' + reducedCounter * 6 + 'deg)';
+            } else {
+                alert(`Couldn't load the DOM.`);
+                pause();
+            }
+        }, 1000);
+    }
+    /* Clears interval but doesn't reset counter so start can be run again */
+    function pause() {
+        clearInterval(interval);
+    }
+    /* Clears interval is stopwatch is on, resets counter and all doms to initial value and seconds hand to initial rotation */
+    function reset() {
+        /* To debug counter value */
+        // timerCounterDOM.innerText =
+        timerHoursDOM.innerText =
+            timerMinutesDOM.innerText =
+            timerSecondsDOM.innerText =
+            '00';
+        timerSecondsHandDOM.style.transform = 'translate(-50%, -50%)';
+        counter = 0;
+        if (isTimerOn) {
+            toggle();
+        }
+    }
+</script>
+
+</html>
