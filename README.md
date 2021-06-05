@@ -44,6 +44,7 @@ Open the file in any browser.
 -   Add timer logic for days, years and light years.
 -   Add timer logic for fastforward or slow(TIME!)
 -   Make the clock more precise on milliseconds
+-   Dark theme soft UI
 
 #
 
